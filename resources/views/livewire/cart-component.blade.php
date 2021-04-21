@@ -33,13 +33,13 @@
                         <div class="quantity">
                             <div class="quantity-input">
                                 <input type="text" name="product-quatity" value="{{$item->model->qty}}" data-max="120" pattern="[0-9]*" >
-                                <a class="btn btn-increase" href="#"></a>
-                                <a class="btn btn-reduce" href="#"></a>
+                                <a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity('{{$item->rowID}}')"></a>
+                                <a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity('{{$item->rowID}}')"></a>
                             </div>
                         </div>
                         <div class="price-field sub-total"><p class="price">${{$item->subtotal}}</p></div>
                         <div class="delete">
-                            <a href="#" class="btn btn-delete" title="">
+                            <a href="#" wire:click.prevent="destroy('{{$item->rowID}}')" class="btn btn-delete" title="">
                                 <span>Delete from your cart</span>
                                 <i class="fa fa-times-circle" aria-hidden="true"></i>
                             </a>
