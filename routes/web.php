@@ -8,6 +8,7 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\admin\AdminCategoryComponent;
+use App\Http\Livewire\admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\admin\AdminProductComponent;
 use App\Http\Livewire\admin\AdminAddProductComponent;
 use App\Http\Livewire\admin\AdminEditProductComponent;
@@ -70,5 +71,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function(){
     Route::get('/admin/slider', AdminHomeSliderComponent::class)->name('admin.homeslider');
     Route::get('/admin/slider/add', AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');
     Route::get('/admin/slider/edit/{slide_id}', AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
+
+    Route::get('/admin/home-categories', AdminHomeCategoryComponent::class)->name('admin.homecategories');
     
 });
